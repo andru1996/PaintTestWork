@@ -27,7 +27,7 @@ public class Cell : MonoBehaviour
     {
         if(other.GetComponent<PlayerContoller>())
         {
-            Paint();
+            Invoke("Paint", other.GetComponent<PlayerContoller>().AnimTime / 2);
         }
     }
 

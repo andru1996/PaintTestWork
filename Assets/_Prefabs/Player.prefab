@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3865605923121125092}
   - component: {fileID: 3865605923121125091}
   - component: {fileID: 2619402104284572573}
+  - component: {fileID: 4005815867229106673}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -41,7 +42,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3865605923121125090}
-  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &3865605923121125092
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -108,6 +109,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a52e6741ca30dfc4ab1a2b26b1814a57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animTime: 0.05
   _poolCells: {fileID: 0}
   _position: {x: 0, y: 0}
-  animTime: 0.2
+--- !u!54 &4005815867229106673
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3865605923121125090}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0

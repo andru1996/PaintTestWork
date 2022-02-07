@@ -7,6 +7,8 @@ public class GameController : MonoBehaviour
     public static GameController inst;
 
     [SerializeField] private PoolCells _poolCells;
+
+    [HideInInspector]
     [SerializeField] private PlayerContoller _player;
 
     public System.Action OnGameWin;
@@ -43,6 +45,7 @@ public class GameController : MonoBehaviour
     private void GameWin()
     {
         OnGameWin?.Invoke();
+        GetComponent<SwipeDetection>().enabled = false;
     }
 
 }

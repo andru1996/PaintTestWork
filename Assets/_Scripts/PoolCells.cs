@@ -5,13 +5,15 @@ using UnityEngine;
 public class PoolCells : MonoBehaviour
 {
     [SerializeField] private GameController gameController;
-    [SerializeField] private List<Cell> _cellList;
     [SerializeField] private Vector2 _size;
     [SerializeField] private GameObject _cellPrefab;
     [SerializeField] private GameObject _playerPrefab;
     [SerializeField] private Vector2 _playerStartPosition;
 
-    private GameObject _player;
+    [HideInInspector]
+    [SerializeField] private GameObject _player;
+    [HideInInspector]
+    [SerializeField] private List<Cell> _cellList;
     public Vector2 Size { get => _size; }
     public List<Cell> CellList { get => _cellList; set => _cellList = value; }
 

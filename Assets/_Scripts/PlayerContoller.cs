@@ -5,22 +5,27 @@ using DG.Tweening;
 
 public class PlayerContoller : MonoBehaviour
 {
-    [SerializeField] private PoolCells _poolCells;
-    [SerializeField] private Cell[,] _cells;
-    [SerializeField] private Vector2 _position;
     [SerializeField] private float animTime;
 
+    [HideInInspector]
+    [SerializeField] private PoolCells _poolCells;
+    [HideInInspector]
+    [SerializeField] private Vector2 _position;
+
+    private Cell[,] _cells;
     private bool isMove = false;
+    
 
     public System.Action OnPlayerMove;
 
-    public Vector2 Position { get => _position; set => _position = value; }
-    public Cell[,] Cells { get => _cells; set => _cells = value; }
-    public PoolCells PoolCells { get => _poolCells; set => _poolCells = value; }
+    public Vector2 Position {set => _position = value;}
+    public PoolCells PoolCells {set => _poolCells = value; }
+    public float AnimTime { get => animTime;}
 
     private void Start()
     {
         InitCells();
+        SwipeDetection.OnSwipe += Move;
     }
 
     private void InitCells()
